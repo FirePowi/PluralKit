@@ -73,4 +73,4 @@ Vous pouvez…
 - [configurer vos paramètres de confidentialité](./user-guide.md#privacy)
 - Ou autre !
 
-Lisez le [Guide Utilisateur](./user-guide.md) pour une explication plus complète des fonctionalités du bot.
+Lisez le [Guide Utilisateurice](./user-guide.md) pour une explication plus complète des fonctionalités du bot.
