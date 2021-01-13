@@ -18,21 +18,21 @@ module.exports = {
   },
 
   themeConfig: {
-    repo: 'xSke/PluralKit',
+    repo: 'FirePowi/PluralKit',
     docsDir: 'docs/content/',
-    docsBranch: 'main',
+    docsBranch: 'doc-fr',
     editLinks: true,
-    editLinkText: 'Help us improve this page!',
-    lastUpdated: "Last updated",
+    editLinkText: 'Aidez-nous à améliorer cette page !',
+    lastUpdated: "Dernière mise à jour",
     nextLinks: true,
     prevLinks: true,
     nav: [
-      { text: "Support server", link: "https://discord.gg/PczBt78" },
-      { text: "Invite bot", link: "https://discord.com/oauth2/authorize?client_id=466378653216014359&scope=bot%20applications.commands&permissions=536995904" }
+      { text: "Serveur de support [en anglais uniquement]", link: "https://discord.gg/PczBt78" },
+      { text: "Inviter le bot", link: "https://discord.com/oauth2/authorize?client_id=466378653216014359&scope=bot%20applications.commands&permissions=536995904" }
     ],
     sidebar: [
       "/",
-      ["https://discord.com/oauth2/authorize?client_id=466378653216014359&scope=bot%20applications.commands&permissions=536995904", "Add to your server"],
+      ["https://discord.com/oauth2/authorize?client_id=466378653216014359&scope=bot%20applications.commands&permissions=536995904", "Ajouter à votre serveur"],
       {
         title: "Documentation",
         collapsable: false,
@@ -48,7 +48,7 @@ module.exports = {
         ]
       },
       {
-        title: "For server staff",
+        title: "Pour l’administration de serveur",
         collapsable: false,
         children: [
           "/staff/permissions",
@@ -58,7 +58,7 @@ module.exports = {
           "/staff/compatibility",
         ]
       },
-      ["https://discord.gg/PczBt78", "Join the support server"],
+      ["https://discord.gg/PczBt78", "Rejoindre le serveur de support [en anglais uniquement]"],
     ]
   },
 
