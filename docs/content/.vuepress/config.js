@@ -66,11 +66,6 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     ["vuepress-plugin-clean-urls", { normalSuffix: "/" }],
-    '@vuepress/last-updated',
-      {
-        dateOptions:{
-          hour12: false
-        }
-      },
+    ['@vuepress/last-updated', { dateOptions:{ hour12: false,}}],
   ],
 }
