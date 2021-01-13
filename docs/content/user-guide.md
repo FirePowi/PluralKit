@@ -23,24 +23,28 @@ Pour faire la plupart des choses avec le bot PluralKit, vous aurez besoin d'un s
 
 ### Créer un système
 Si vous n’avez pas déjà de système enregistré, utilisez la commande suivante pour en créer un :
-`pk;system new`
+
+    pk;system new
 
 Optionellement, vous pouvez définir un *nom de système*, qui sera affiché dans la carte d’informations, comme suit :
-`pk;system new Mon Nom de Système`
+
+    pk;system new Mon Nom de Système
     
 ### Voir les information à propos d’un système
 Pour voir les informations à propos de votre propre système, tapez simplement :
-`pk;system`
 
-Pour voir les informations à propos d’un *système différent*, il y a plusieurs façon de faire. Vous pouvez soit renseigner le @mention, soit l’ID du compte discord, soit l’ID du système. Par exemple :
-`pk;system @Craig#5432`
-`pk;system 466378653216014359`
-`pk;system abcde`
+    pk;system
+
+Pour voir les informations à propos d’un *système différent*, il y a plusieurs façon de faire. Vous pouvez soit renseigner le @mention, soit l’ID du compte discord, soit l’ID du système. Par exemple : 
+
+    pk;system @Craig#5432
+    pk;system 466378653216014359
+    pk;system abcde
 
 ### Description de système
 Si vous souhaitez ajouter une petite présentation à votre carte d'informations système, vous pouvez ajouter une *description du système*. Pour ce faire, utilisez la commande`pk;system description` comme suit :
 
-`pk;system description Ceci est la description de mon système. Bonjour. Lorem ipsum dolor sit amet.`
+    pk;system description Ceci est la description de mon système. Bonjour. Lorem ipsum dolor sit amet.`
 
 Il y a une limite de 1000 charactères pour la description de votre système – Ce qui est beaucoup !
 
@@ -48,8 +52,9 @@ Si vous souhaitez supprimer la description de votre système, tapez simplement `
 
 ### Avatars système
 Si vous souhaitez que votre système ait un « avatar système » associé, affiché sur votre carte d'information système, vous pouvez ajouter un avatar système. Pour ce faire, utilisez la commande `pk;system avatar`. Vous pouvez soit lui fournir une URL directe vers une image, soit joindre une image au message contenant la commande. Par exemple.
-`pk;system avatar http://placebeard.it/512.jpg`
-`pk;system avatar` [avec une image attachée]
+
+    pk;system avatar http://placebeard.it/512.jpg
+    pk;system avatar (avec une image attachée)
     
 Pour retirer votre avatar, utiliser simplement `pk;system avatar` sans attachement, ni lien.
 
@@ -58,9 +63,9 @@ Pour retirer votre avatar, utiliser simplement `pk;system avatar` sans attacheme
 Votre balise système est un petit extrait de texte qui sera ajouté à la fin de tous les messages proxyés.
 Par exemple, si vous voulez proxyer un membre nommé `John` et que votre tag système est `| Les Nones`, le nom affiché sera `John | Les Nones`. C’est très utile pour identifier votre système dans le chat. Et certains serveurs peuvent exiger que vous utilisiez les tags système. Notez que les émojis *sont* supportés ! Pour définir un tag système, utilisez la commande `pk;system tag` comme suit :
 
-`pk;system tag | Les Nones`
-`pk;system tag (Système de Test)`
-`pk;system tag 🛰️`
+    pk;system tag | Les Nones
+    pk;system tag (Système de Test)
+    pk;system tag 🛰️
 
 Si vous voulez supprimer votre tag système, vous pouvez simplement taper `pk;system tag` sans rien derrière.
 
@@ -72,12 +77,14 @@ Si vous avez plusieurs comptes Discord sur lesquels vous voulez utiliser le mêm
 Vous pouvez simplement *lier* le même système à plusieurs comptes.
 
 Partons du principe que le compte auquel vous voulez lier votre système est @Craig#5432. Vous le lierez à votre système *actuel* en utilisant la commande depuis un compte qui a accès au système :
-`pk;link @Craig#5432`
+
+    pk;link @Craig#5432
 
 PluralKit vous demandera de confirmer ce lien en cliquant sur une réaction *depuis l’autre compte* (@Craig#5432 dans ce cas).
 
 Si vous voulez délier ce compte, utiliser la commande suivante :
-`pk;unlink @Craig#5432`
+
+    pk;unlink @Craig#5432
 
 Vous ne pouvez pas supprimer le seul compte ayant accès à un système, étant donné que ça rendrait ce système inacessible. Les commande `pk;link` ainsi que `pk;unlink` fonctionnent aussi bien avec l’ID du compte discord plutôt que la @mention.
 
