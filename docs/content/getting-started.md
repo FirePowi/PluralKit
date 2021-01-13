@@ -1,76 +1,76 @@
 ---
-title: Getting Started
-description: A basic tutorial of how to set up the bot.
+title: Bien débuter
+description: Un tutoriel basique pour comprendre comment paramétrer le bot.
 permalink: /start
 
-# Previous page on sidebar is the invite link, prevent that from showing up here
+# La page précédente de la barre latérale est le lien d'invitation, empêchez-le de s'afficher ici
 prev: false
 ---
 
-# Quick start
+# Démarrage rapide
 
-This page will get you started :zap: lightning-fast :zap: with the bot. You'll need to follow these steps:
+Cette page vous permettra de démarrer :zap: en un éclair :zap: avec le bot. Vous aurez besoin des étapes suivantes :
 
-## Create a system
-First, **create a system** with the following command:
-
-    pk;system new
+## Créer un système
+En premier, **créer un système** avec la commande suivante :
+`pk;system new`
 
 ::: tip
-You can also specify a system name if you want:
+Vous pouvez spécifier un nom de système si vous voulez :
 
-    pk;system new My System Name
+    pk;system new Mon nom de système
 
 :::
 
-## Create a member       
-Second, **create a member** with the following command, inserting the member name:
+## Créer un membre
 
-    pk;member new MyMember
+En second, **créer un membre** avec la commande suivante, en donnant le nom du membre :
+
+    pk;member new MonMembre
 
 ::: tip
-You can include spaces, punctuation, or symbols in the member name. However, you'll need to write them `"in quotes"` every time you refer to the member elsewhere.
+Vous pouvez mettre des espaces, des ponctuations ou des symboles dans le nom de votre membre. Cependant, vous devrez écrire le nom `"entre guillemets"` à chaque fois que vous y ferez référence.
 
-Instead, you can give your member a simple, easy to type name, then set the member's [display name](./user-guide.md#member-display-names) to a more complex version. That'll get displayed when proxying, and then you can keep the following commands simple.
+À la place, vous pouvez donner un nom simple et facile à taper au membre, puis paramétrer le [nom affiché](./user-guide.md#member-display-names) pour une version plus complexe. Ça affichera le nom choisi quand proxyé et les commandes seront toujours facile à taper.
 ::: 
 
-## Set some proxy tags
-Now, you'll need to tell PluralKit how you want to trigger the proxy using **proxy tags**. Often, these will be a pair of brackets, an emoji prefix, or something similar.
+## Définir des tags proxy
+Maintenant, vous aller devoir dire à PluralKit comment vous voulez déclencher le proxy en utilisant les **proxy tags**. Souvent, c’est une paire de crochet, un prefix emoji ou quelque chose de similaire.
 
-To set a member's proxy tags, you'll need to "pretend" you're proxying the word `text` - just the word itself, all-lowercase. This often gets a bit confusing, so here are a couple of examples with various patterns:
-
-    pk;member MyMember proxy J:text
-    pk;member MyMember proxy [text]
-    pk;member MyMember proxy 🌸text
-    pk;member MyMember proxy text -Q
+Pour définir le tag proxy d’un membre, vous aurez besoin de faire comme si vous demandiez à proxyer le mot `text` – juste le mot lui-même, tout en minuscule. C’est souvent un peu confusant, donc prenons quelques exemples avec différents modèles :
+`pk;member MomMembre proxy J:text`
+`pk;member MomMembre proxy [text]`
+`pk;member MomMembre proxy 🌸text`
+`pk;member MomMembre proxy text -Q`
 
 ::: tip
-You're not limited to the types of proxy tags shown above. You can put anything you'd like around the word `text` (before, after, or both), and PluralKit will look for that. Be creative!
+Vous n’êtes pas limité-es aux différents types de tags proxy ci-dessus. Vous pouvez définir ce que vous voulez autour du mot `text` (avant, après, ou les deux) et PluralKit comprendra.
+Soyez créativfes !
 :::
 
-## Set an avatar (optional)
-If you want an avatar displayed, use the following command:
-
-    pk;member MyMember avatar https://link.to.your/avatar.png
+## Définir un avatar (facultatif)
+Si vous voulez qu’un avatar soit affiché, utilisez la commande suivante :
+`pk;member MonMembre avatar https://lien.vers.votre/avatar.png`
 
 ::: tip
-If you don't have a link, you can leave that out entirely, and then **attach** the image to the command message itself. PluralKit will pick up on the attachment, and use that instead.
+Si vous n’avez pas de lien, vous pouvez à la place **attacher** une image au message de commande lui-même.
+PluralKit se servira du lien de l’image attachée et l’utilisera à la place.
 :::
 
 ::: warning
-Avatars have some restrictions: 
-- The image must be in **.jpg**, **.png**, or **.webp** format
-- The image must be under **1024 KB** in size
-- The image must be below **1024 x 1024 pixels** in resolution (along the smallest axis).
-- Animated GIFs are **not** supported (even if you have Nitro).
+Les avatars ont quelques restrictions : 
+- L’image doit être en format **.jpg**, **.png**, ou **.webp**.
+- L’image doit faire moins de **1024 Ko**.
+- La résolution de l’image ne doit pas dépasser **1024 pixels** de largeur et de longueur.
+- Les GIFs animés **ne** sont **pas** supporté (même si vous avez Nitro).
 :::
 
-## What's next?
+## Et ensuite ?
 
-You could...
-- [set up your member profile with descriptions, pronouns, etc](./user-guide.md#member-management)
-- [log your switches](./user-guide.md#managing-switches)
-- [configure privacy settings](./user-guide.md#privacy)
-- or something else!
+Vous pouvez…
+- [définir le profile de votre membre, avec sa description, des pronoms, etc.](./user-guide.md#member-management)
+- [logguer vos switchs](./user-guide.md#managing-switches)
+- [configurer vos paramètres de confidentialité](./user-guide.md#privacy)
+- Ou autre !
 
-See the [User Guide](./user-guide.md) for a more complete reference of the bot's features.
+Lisez le [Guide Utilisateur](./user-guide.md) pour une explication plus complète des fonctionalités du bot.
