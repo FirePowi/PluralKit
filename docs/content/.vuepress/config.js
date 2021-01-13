@@ -1,5 +1,6 @@
 module.exports = {
   title: 'PluralKit',
+  lang: 'fr-FR',
   theme: 'default-prefers-color-scheme',
 
   base: "/",
@@ -64,12 +65,6 @@ module.exports = {
 
   plugins: [
     '@vuepress/plugin-back-to-top',
-    [
-      '@vuepress/google-analytics',
-      {
-        "ga": "UA-173942267-1"
-      }
-    ],
     ["vuepress-plugin-clean-urls", { normalSuffix: "/" }],
   ],
 }
