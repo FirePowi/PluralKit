@@ -1,13 +1,13 @@
 ---
-title: User Guide
-description: PluralKit's user guide contains a walkthrough of the bot's features, as well as how to use them.
+title: Guide Utilisateurice
+description: Guide utilisateurice PluralKit contenant la procédure pas à pas des fonctionalités du bot, autant que comment les utiliser.
 permalink: /guide
 
-# To prevent sidebar from getting super long
+# Pour empêcher la sidebare d’être super longue
 sidebarDepth: 1
 ---
 
-# User Guide
+# Guide Utilisateurice [Travail en cours]
 
 ## Adding the bot to your server
 If you want to use PluralKit on a Discord server, you must first *add* it to the server in question. For this, you'll need the *Manage Server* permission on there.
