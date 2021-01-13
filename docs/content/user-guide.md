@@ -9,87 +9,79 @@ sidebarDepth: 1
 
 # Guide Utilisateurice [Travail en cours]
 
-## Adding the bot to your server
-If you want to use PluralKit on a Discord server, you must first *add* it to the server in question. For this, you'll need the *Manage Server* permission on there.
+## Ajouter le bot à votre serveur
+Si vous voulez utiliser PluralKit sur votre serveur Discord, vous devez l’*ajouter* au serveur en question. Pour ça, vous aurez besoin de la permission *Gérer le serveur* sur ce même discord.
 
-Use this link to add the bot to your server:
+Utilisez ce lien pour ajouter le bot à votre serveur :
 
 [https://discord.com/oauth2/authorize?client_id=466378653216014359&scope=bot&permissions=536995904](https://discord.com/oauth2/authorize?client_id=466378653216014359&scope=bot&permissions=536995904)
 
-Once you go through the wizard, the bot account will automatically join the server you've chosen. Please ensure the bot has the *Read Messages*, *Send Messages*, *Manage Messages*, *Attach Files* and *Manage Webhooks* permission in the channels you want it to work in. 
+Une fois que vous avez parcouru l'assistant, le compte du bot rejoindra automatiquement le serveur que vous avez choisi. Veuillez vous assurer que le bot dispose des autorisations *Lire les messages*, *Envoyer des messages*, *Gérer les messages*, *Joindre des fichiers* et *Gérer les webhooks* dans les canaux sur lesquels vous souhaitez qu'il fonctionne.
 
-## System management
-In order to do most things with the PluralKit bot, you'll need to have a system registered with it. A *system* is a collection of *system members* that may be used by one or more *Discord accounts*.
+## La gestion de système
+Pour faire la plupart des choses avec le bot PluralKit, vous aurez besoin d'un système enregistré dessus. Un *système* est un ensemble de *membres du système* qui peuvent être utilisés par un ou plusieurs *comptes Discord*.
 
-### Creating a system
-If you do not already have a system registered, use the following command to create one:
+### Créer un système
+Si vous n’avez pas déjà de système enregistré, utilisez la commande suivante pour en créer un :
+`pk;system new`
 
-    pk;system new
-   
-Optionally, you can attach a *system name*, which will be displayed in various information cards, like so:
-
-    pk;system new My System Name
+Optionellement, vous pouvez définir un *nom de système*, qui sera affiché dans la carte d’informations, comme suit :
+`pk;system new Mon Nom de Système`
     
-### Viewing information about a system
-To view information about your own system, simply type:
+### Voir les information à propos d’un système
+Pour voir les informations à propos de votre propre système, tapez simplement :
+`pk;system`
 
-    pk;system
+Pour voir les informations à propos d’un *système différent*, il y a plusieurs façon de faire. Vous pouvez soit renseigner le @mention, soit l’ID du compte discord, soit l’ID du système. Par exemple :
+`pk;system @Craig#5432`
+`pk;system 466378653216014359`
+`pk;system abcde`
+
+### Description de système
+Si vous souhaitez ajouter une petite présentation à votre carte d'informations système, vous pouvez ajouter une *description du système*. Pour ce faire, utilisez la commande`pk;system description` comme suit :
+
+`pk;system description Ceci est la description de mon système. Bonjour. Lorem ipsum dolor sit amet.`
+
+Il y a une limite de 1000 charactères pour la description de votre système – Ce qui est beaucoup !
+
+Si vous souhaitez supprimer la description de votre système, tapez simplement `pk;system description` sans texte supplémentaire.
+
+### Avatars système
+Si vous souhaitez que votre système ait un « avatar système » associé, affiché sur votre carte d'information système, vous pouvez ajouter un avatar système. Pour ce faire, utilisez la commande `pk;system avatar`. Vous pouvez soit lui fournir une URL directe vers une image, soit joindre une image au message contenant la commande. Par exemple.
+`pk;system avatar http://placebeard.it/512.jpg`
+`pk;system avatar` [avec une image attachée]
     
-To view information about *a different* system, there are a number of ways to do so. You can either look up a system by @mention, by account ID, or by system ID. For example:
+Pour retirer votre avatar, utiliser simplement `pk;system avatar` sans attachement, ni lien.
 
-    pk;system @Craig#5432
-    pk;system 466378653216014359
-    pk;system abcde
+### Tags système
+
+Votre balise système est un petit extrait de texte qui sera ajouté à la fin de tous les messages proxyés.
+Par exemple, si vous voulez proxyer un membre nommé `John` et que votre tag système est `| Les Nones`, le nom affiché sera `John | Les Nones`. C’est très utile pour identifier votre système dans le chat. Et certains serveurs peuvent exiger que vous utilisiez les tags système. Notez que les émojis *sont* supportés ! Pour définir un tag système, utilisez la commande `pk;system tag` comme suit :
+
+`pk;system tag | Les Nones`
+`pk;system tag (Système de Test)`
+`pk;system tag 🛰️`
+
+Si vous voulez supprimer votre tag système, vous pouvez simplement taper `pk;system tag` sans rien derrière.
+
+**NB :** Lors du proxy, le *nom d'utilisateur total du webhook* doit contenir au maximum 32 caractères. En tant que tel, si vous avez un nom système long, votre balise peut suffire pour le faire dépasser cette limite. PluralKit vous avertira si vous avez une combinaison nom / tag de membre qui amènera le nom d'utilisateur combiné au-dessus de la limite.
+Vous pouvez raccourcir le nom du membre ou la balise système pour résoudre ce problème.
     
-### System description
-If you'd like to add a small blurb to your system information card, you can add a *system description*. To do so, use the `pk;system description` command, as follows:
+### Ajouter ou supprimer un compte discord à votre système
+Si vous avez plusieurs comptes Discord sur lesquels vous voulez utiliser le même système, vous n’avez pas besoin de créer plusieurs systèmes. 
+Vous pouvez simplement *lier* le même système à plusieurs comptes.
 
-    pk;system description This is my system description. Hello. Lorem ipsum dolor sit amet.
-    
-There's a 1000 character length limit on your system description - which is quite a lot! 
+Partons du principe que le compte auquel vous voulez lier votre système est @Craig#5432. Vous le lierez à votre système *actuel* en utilisant la commande depuis un compte qui a accès au système :
+`pk;link @Craig#5432`
 
-If you'd like to remove your system description, just type `pk;system description` without any further parameters.
+PluralKit vous demandera de confirmer ce lien en cliquant sur une réaction *depuis l’autre compte* (@Craig#5432 dans ce cas).
 
-### System avatars
-If you'd like your system to have an associated "system avatar", displayed on your system information card, you can add a system avatar. To do so, use the `pk;system avatar` command. You can either supply it with an direct URL to an image, or attach an image directly. For example.
+Si vous voulez délier ce compte, utiliser la commande suivante :
+`pk;unlink @Craig#5432`
 
-    pk;system avatar http://placebeard.it/512.jpg
-    pk;system avatar [with attached image]
-    
-To clear your avatar, simply type `pk;system avatar` with no attachment or link.
+Vous ne pouvez pas supprimer le seul compte ayant accès à un système, étant donné que ça rendrait ce système inacessible. Les commande `pk;link` ainsi que `pk;unlink` fonctionnent aussi bien avec l’ID du compte discord plutôt que la @mention.
 
-### System tags
-Your system tag is a little snippet of text that'll be added to the end of all proxied messages.
-For example, if you want to proxy a member named `James`, and your system tag is `| The Boys`, the final name displayed
-will be `James | The Boys`. This is useful for identifying your system in-chat, and some servers may require you use
-a system tag. Note that emojis *are* supported! To set one, use the `pk;system tag` command, like so:
-
-    pk;system tag | The Boys
-    pk;system tag (Test System)
-    pk;system tag 🛰️
-    
-If you want to remove your system tag, just type `pk;system tag` with no extra parameters.
-
-**NB:** When proxying, the *total webhook username* must be 32 characters or below. As such, if you have a long system name, your tag might be enough
-to bump it over that limit. PluralKit will warn you if you have a member name/tag combination that will bring the combined username above the limit.
-You can either make the member name or the system tag shorter to solve this. 
-    
-### Adding or removing Discord accounts to the system
-If you have multiple Discord accounts you want to use the same system on, you don't need to create multiple systems.
-Instead, you can *link* the same system to multiple accounts.
-
-Let's assume the account you want to link to is called @Craig#5432. You'd link it to your *current* system by running this command from an account that already has access to the system:
-
-    pk;link @Craig#5432
-    
-PluralKit will require you to confirm the link by clicking on a reaction *from the other account*. 
-
-If you now want to unlink that account, use the following command:
-
-    pk;unlink @Craig#5432
-    
-You may not remove the only account linked to a system, as that would leave the system inaccessible. Both the `pk;link` and `pk;unlink` commands work with account IDs instead of @mentions, too.
-
+[Pause Traduction]
 ### Setting a system time zone
 PluralKit defaults to showing dates and times in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). 
 If you'd like, you can set a *system time zone*, and as such every date and time displayed in PluralKit
