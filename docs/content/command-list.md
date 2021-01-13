@@ -1,116 +1,116 @@
 ---
 layout: default
-title: Command List
+title: Liste des Commandes
 permalink: /commands
-description: The full list of all commands in PluralKit, and a short description of what they do.
+description: La liste complète de toutes les commandes dans PluralKit ainsi qu’une brève description de ce qu’elles font.
 nav_order: 3
 ---
 
-# How to read this
-Words in **\<angle brackets>** or **[square brackets]** mean fill-in-the-blank. Square brackets mean this is optional. Don't include the actual brackets.
+# Comment lire ça ?
+Les mots entre **\<chevrons>** ou **[crochets]** signifient que vous devez les modifier. Les crochets signifient que c’est optionnel. N’incluez pas les chevrons et crochets.
 
-# Commands
-## System commands
-*Optionally replace `[system]` with a @mention, Discord account ID, or 5-character ID. For most commands, adding `-clear` will clear/delete the field.*
-- `pk;system [system]` - Shows information about a system.
-- `pk;system new [name]` - Creates a new system registered to your account.
-- `pk;system rename [new name]` - Changes the name of your system.
-- `pk;system description [description]` - Changes the description of your system.
-- `pk;system avatar [avatar url]` - Changes the avatar of your system.
-- `pk;system privacy` - Displays your system's current privacy settings.
-- `pk;system privacy <subject> <public|private>` - Changes your systems privacy settings.
-- `pk;system tag [tag]` - Changes the system tag of your system.
-- `pk;system timezone [location]` - Changes the time zone of your system.
-- `pk;system proxy [on|off]` - Toggles message proxying for a specific server. 
-- `pk;system delete` - Deletes your system.
-- `pk;system [system] fronter` - Shows the current fronter of a system.
-- `pk;system [system] fronthistory` - Shows the last 10 fronters of a system.
-- `pk;system [system] frontpercent [timeframe]` - Shows the aggregated front history of a system within a given time frame.
-- `pk;system [system] list` - Shows a paginated list of a system's members.
-- `pk;system [system] list -full` - Shows a paginated list of a system's members, with increased detail.
-- `pk;find <search term>` - Searches members by name.
-- `pk;system [system] find <search term>` - (same as above, but for a specific system)
-- `pk;autoproxy [off|front|latch|member]` - Updates the system's autoproxy settings for a given server.
-- `pk;link <account>` - Links this system to a different account.
-- `pk;unlink [account]` - Unlinks an account from this system.
+# Commandes
+## Commandes système
+*Optionnellement, remplacez `[système]` par une @mention, un ID de compte discord, l’ID à 5 caractères. Pour la plupart des commandes, ajouter `-clear` supprimera/effacera les champs.*
+- `pk;system [système]` - Affiche les informations à propos du système.
+- `pk;system new [nom]` - Créer un nouveau système enregistré à votre compte.
+- `pk;system rename [nouveau nom]` - Change le nom de votre système.
+- `pk;system description [description]` - Change la description de votre système
+- `pk;system avatar [url de l'avatar]` - Change l’avatar de votre système.
+- `pk;system privacy` - Affiche les paramètres de confidentialité de votre système.
+- `pk;system privacy <sujet> <public|private>` - Change les paramètres de confidentialité de votre système
+- `pk;system tag [tag]` - Change le tag système de votre système
+- `pk;system timezone [lieu]` - Change la timezone de votre système.
+- `pk;system proxy [on|off]` - Bascule (on/off) le proxying pour un serveur spécifique.
+- `pk;system delete` - Supprime votre système.
+- `pk;system [système] fronter` - Affiche le front actuelle d'un système.
+- `pk;system [système] fronthistory` - Affiche les 10 derniers fronts de votre système.
+- `pk;system [système] frontpercent [timeframe]` - Affiche l'historique de front agrégé d'un système dans un laps de temps donné.
+- `pk;system [système] list` - Affiche une liste paginée des membres d'un système.
+- `pk;system [système] list -full` - Affiche une liste paginée des membres d'un système, avec plus de détails.
+- `pk;find <search term>` - Cherche un membre par nom.
+- `pk;system [système] find <search term>` - Cherche un membre par nom, pour un système donné.
+- `pk;autoproxy [off|front|latch|member]` - Modifie le paramètre d’autoproxy pour ce serveur discord ([désactivé|front|verouillé|\<membre>]).
+- `pk;link <compte>` - Lie ce système à un compte discord différent.
+- `pk;unlink [compte]` - Délie ce système d’un compte discord.
 
-## Member commands
-*Replace `<name>` with a member's name, 5-character ID or display name. For most commands, adding `-clear` will clear/delete the field.*
-- `pk;member <name>` - Shows information about a member.
-- `pk;member new <name>` - Creates a new system member.
-- `pk;member <name> rename <new name>` - Changes the name of a member.
-- `pk;member <name> displayname <new display name>` - Changes the display name of a member.
-- `pk;member <name> servername <new server name>` - Changes the display name of a member, only in the current server.
-- `pk;member <name> description [description]` - Changes the description of a member.
-- `pk;member <name> avatar <avatar url|@mention>` - Changes the avatar of a member.
-- `pk;member <name> serveravatar <avatar url|@mention>` - Changes the avatar of a member in a specific server.
-- `pk;member <name> privacy` - Displays a members current privacy settings.
-- `pk;member <name> privacy <subject> <public|private>` - Changes a members privacy setting.
-- `pk;member <name> proxy [tags]` - Changes the proxy tags of a member. use below add/remove commands for members with multiple tag pairs.
-- `pk;member <name> proxy add [tags]` - Adds a proxy tag pair to a member.
-- `pk;member <name> proxy remove [tags]` - Removes a proxy tag from a member.
-- `pk;member <name> autoproxy [on|off]` - Sets whether a member will be autoproxied when autoproxy is set to latch or front mode.
-- `pk;member <name> keepproxy [on|off]` - Sets whether to include a member's proxy tags in the proxied message.
-- `pk;member <name> pronouns [pronouns]` - Changes the pronouns of a member.
-- `pk;member <name> color [color]` - Changes the color of a member.
-- `pk;member <name> birthdate [birthdate]` - Changes the birthday of a member.
-- `pk;member <name> delete` - Deletes a member.
+## Commandes membre
+*Remplacer `<membre>` par le nom d’un membre ou son ID a 5 caractères. Pour la plupart des commandes, ajouter `-clear` effacera/supprimera le champ.*
+- `pk;member <membre>` - Affiche les informations à propos d’un membre.
+- `pk;member new <nom>` - Créer un nouveau membre du système.
+- `pk;member <membre> rename <nouveau nom>` - Change le nom d’un membre.
+- `pk;member <membre> displayname <nouveau nom affiché>` - Change le nom affiché d’un membre.
+- `pk;member <membre> servername <nouveau nom affiché>` - Change le nom affiché d’un membre, seulement pour le serveur actuel.
+- `pk;member <membre> description [description]` - Change la description d’un membre.
+- `pk;member <membre> avatar <url de l'avatar|@mention>` - Change l’avatar d’un membre.
+- `pk;member <membre> serveravatar <url de l'avatar|@mention>` - Change l’avatar d’un membre, seulement pour le serveur actuel.
+- `pk;member <membre> privacy` - Affiche les paramètres de confidentialité d’un membre.
+- `pk;member <membre> privacy <sujet> <public|private>` - Change les paramètres de confidentialité d’un membre.
+- `pk;member <membre> proxy [tags]` - Change le tag proxy d’un membre. Ajouter `add/remove` pour ajouter/supprimer des tags.
+- `pk;member <membre> proxy add [tags]` - Ajouter un/des tags proxy à un membre.
+- `pk;member <membre> proxy remove [tags]` - Supprimer le/des tags proxy d’un membre.
+- `pk;member <membre> autoproxy [on|off]` - Définit si un membre sera autoproxié lorsque autoproxy est défini sur verouillé (latch) ou front.
+- `pk;member <membre> keepproxy [on|off]` - Définit s'il faut inclure les balises proxy d'un membre dans le message mandaté.
+- `pk;member <membre> pronouns [pronouns]` - Change les pronoms d’un membre.
+- `pk;member <membre> color [color]` - Change la couleur d’un membre.
+- `pk;member <membre> birthdate [birthdate]` - Change l’anniversaire d’un membre.
+- `pk;member <membre> delete` - Supprime un membre.
 
-## Group commands
-*Replace `<groupname>` with a group's name, 5-character ID or display name. For most commands, adding `-clear` will clear/delete the field.*
-- `pk;group <groupname>` - Shows information about a group.
-- `pk;group new <name>` - Creates a new group.
-- `pk;group list` - Lists all groups in your system.
-- `pk;group <groupname> list` - Lists all members in a group.
-- `pk;group <groupname> random` - Shows the info card of a randomly selected member in a group.
-- `pk;group <groupname> rename <new name>` - Renames a group.
-- `pk;group <groupname> displayname [display name]` - Shows or changes a group's display name.
-- `pk;group <groupname> description [description]` - Shows or changes a group's description.
-- `pk;group <groupname> add <member> [member 2] [member 3...]` - Adds one or more members to a group.
-- `pk;group <groupname> remove <member> [member 2] [member 3...]` - Removes one or more members from a group.
-- `pk;group <groupname> privacy <description|icon|visibility|all> <public|private>` - Changes a group's privacy settings.
-- `pk;group <groupname> icon [icon]` - Shows or changes a group's icon.
-- `pk;group <groupname> delete` - Deletes a group.
+## Commandes de groupe
+*Remplacer `<groupe>` par le nom d’un groupe ou son ID a 5 caractères. Pour la plupart des commandes, ajouter `-clear` effacera/supprimera le champ.*
+- `pk;group <groupe>` - Affiche les informations à propos d’un groupe.
+- `pk;group new <nom>` - Créer un nouveau groupe.
+- `pk;group list` - Liste tous les groupes de votre système.
+- `pk;group <groupe> list` - Liste tous les membres d’un groupe.
+- `pk;group <groupe> random` - Affiche les informations d’un membre aléatoirement selectionné dans un groupe.
+- `pk;group <groupe> rename <nouveau nom>` - Renommer un groupe.
+- `pk;group <groupe> displayname [nom affiché]` - Affiche ou modifie le nom affiché du groupe.
+- `pk;group <groupe> description [description]` - Affiche ou modifie la description d’un groupe.
+- `pk;group <groupe> add <membre> [membre 2] [membre 3...]` - Ajoute un ou plusieurs membres à un groupe.
+- `pk;group <groupe> remove <membre> [membre 2] [membre 3...]` - Supprime un ou plusieurs membres d’un groupe.
+- `pk;group <groupe> privacy <description|icon|visibility|all> <public|private>` - Change les paramètres de confidentialité d’un groupe. (\<description|icône|visibilité|tout>)
+- `pk;group <groupe> icon [icône]` - Affiche on change l’icône d’un groupe.
+- `pk;group <groupe> delete` - Supprime un groupe.
 
-## Switching commands
-- `pk;switch [member...]` - Registers a switch with the given members.
-- `pk;switch move <time>` - Moves the latest switch backwards in time.
-- `pk;switch delete` - Deletes the latest switch.
-- `pk;switch delete all` - Deletes all logged switches.
-- `pk;switch out` - Registers a 'switch-out' - a switch with no associated members.
+## Commandes de switch
+- `pk;switch [membre...]` - Enregistre un switch avec les membres donnés.
+- `pk;switch move <time>` - Déplace le switch en arrière dans le temps.
+- `pk;switch delete` - Supprime le dernier switch.
+- `pk;switch delete all` - Supprime tous les switchs loggués.
+- `pk;switch out` - Enregirste un 'switch-out' – Un switch sans membre associé.
 
-## Autoproxy commands
-- `pk;autoproxy [off|front|latch|<member>]` - Sets your system's autoproxy mode for the current server.
-- `pk;autoproxy timeout [<duration>|off|reset]` - Sets the latch timeout duration for your system.
-- `pk;autoproxy account [on|off]` - Toggles autoproxy globally for the current account.
+## Commandes d’autoproxy
+- `pk;autoproxy [off|front|latch|<membre>]` - Modifie le paramètre d’autoproxy pour ce serveur discord ([désactivé|front|verouillé|\<membre>]).
+- `pk;autoproxy timeout [<durée>|off|reset]` - Définit la durée du délai de verrouillage pour votre système.
+- `pk;autoproxy account [on|off]` - Active / désactive globalement l'autoproxy pour le compte actuel.
 
 ## Server owner commands
-*(all commands here require Manage Server permission)*
-- `pk;log channel <channel>` - Sets the given channel to log all proxied messages.
-- `pk;log channel -clear` - Clears the currently set log channel.
-- `pk;log disable <#channel> [#channel...]` - Disables logging messages posted in the given channel(s) (useful for staff channels and such).
-- `pk;log enable <#channel> [#channel...]` - Re-enables logging messages posted in the given channel(s).
-- `pk;logclean <on/off>` - Enables or disables [log cleanup](./staff/compatibility.md#log-cleanup).
-- `pk;blacklist add <#channel> [#channel...]` - Adds the given channel(s) to the proxy blacklist (proxying will be disabled here)
-- `pk;blacklist remove <#channel> [#channel...]` - Removes the given channel(s) from the proxy blacklist.
+*(Toutes ces commandes requièrent la permission « Gérer le serveur »)*
+- `pk;log channel <salon>` - Paramètre un salon où logguer tous les messages proxiés.
+- `pk;log channel -clear` - Nettoie l’actuel salon de log.
+- `pk;log disable <#salon> [#salon...]` - Désactive le log des messages postés dans un ou plusieurs salons (utile pour les salons d’admins et autres).
+- `pk;log enable <#salon> [#salon...]` - Réactiver le log des messages postés dans un ou plusieeurs salons.
+- `pk;logclean <on/off>` - Active ou désactive [log cleanup](./staff/compatibility.md#log-cleanup).
+- `pk;blacklist add <#salon> [#salon...]` - Ajouter les salons donnés à la blacklist proxy (le proxy sera désactivé dans ces salons).
+- `pk;blacklist remove <#salon> [#salon...]` - Retire les salons donnés de la blacklist proxy.
 
-## Utility
-- `pk;random [-group]` - Shows the info card of a randomly selected member [or group] in your system.
-- `pk;message <message id / message link>` - Looks up information about a proxied message by its message ID or link.
-- `pk;invite` - Sends the bot invite link for PluralKit.
-- `pk;import` - Imports a data file from PluralKit or Tupperbox.
-- `pk;export` - Exports a data file containing your system information.
-- `pk;permcheck [server id]` - [Checks the given server's permission setup](./staff/permissions.md#permission-checker-command) to check if it's compatible with PluralKit.
+## Utilitaire
+- `pk;random [-group]` - Affiche la carte d’informations d’un membre [ou groupe] sélectionné aléatoirement dans votre système.
+- `pk;message <id du message / lien du message>` - Affiche les informations à propos d’un message proxyé à partir de son ID ou de son lien.
+- `pk;invite` - Envoie le lien d’invitation de PluralKit.
+- `pk;import` - Importe des données depuis PluralKit ou Tupperbox.
+- `pk;export` - Exporte un fichier de données contener les information de votre système.
+- `pk;permcheck [id du serveur]` - [Vérifie le paramétrage des permissions du serveur donné](./staff/permissions.md#permission-checker-command) pour voir s’il est compatible avec PluralKit.
 
 ## API
-*(for using the [PluralKit API](./api-documentation.md), useful for developers)*
-- `pk;token` - DMs you a token for using the PluralKit API.
-- `pk;token refresh` - Refreshes your API token and invalidates the old one.
+*(pour utiliser l’[API PluralKit](./api-documentation.md), utile pour les développeurses)*
+- `pk;token` - Vous envoie un DM contenant le token pour utiliser l’API PluralKit.
+- `pk;token refresh` - Met à jour votre token API et désactive l’ancien.
 
-## Help
-- `pk;help` - Displays a basic help message describing how to use the bot.
-- `pk;help proxy` - Directs you to [this page](./user-guide.md#proxying).
-- `pk;system help` - Lists system-related commands.
-- `pk;member help` - Lists member-related commands.
-- `pk;switch help` - Lists switch-related commands.
-- `pk;commands` - Directs you to this page!
+## Aide
+- `pk;help` - Affiche un message d’aide basique, en anglais, décrivant comment utiliser le bot.
+- `pk;help proxy` - Vous dirige vers la version anglaise de [cette page](./user-guide.md#proxying).
+- `pk;system help` - Liste les commandes liées au système.
+- `pk;member help` - Liste les commandes liées aux membres.
+- `pk;switch help` - Liste les commandes liées aux switchs.
+- `pk;commands` - Vous dirige vers la version anglaise de cette page.
