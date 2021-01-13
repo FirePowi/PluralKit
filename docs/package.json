@@ -1,7 +1,7 @@
 {
   "name": "pluralkit-docs",
   "private": true,
-  "description": "Documentation for PluralKit",
+  "description": "Documentation pour PluralKit",
   "scripts": {
     "dev": "vuepress dev content",
     "build": "vuepress build content"
