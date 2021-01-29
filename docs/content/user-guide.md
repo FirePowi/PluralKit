@@ -88,128 +88,123 @@ Si vous voulez délier ce compte, utiliser la commande suivante :
 
 Vous ne pouvez pas supprimer le seul compte ayant accès à un système, étant donné que ça rendrait ce système inacessible. Les commande `pk;link` ainsi que `pk;unlink` fonctionnent aussi bien avec l’ID du compte discord plutôt que la @mention.
 
-[Pause Traduction]
-### Setting a system time zone
-PluralKit defaults to showing dates and times in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). 
-If you'd like, you can set a *system time zone*, and as such every date and time displayed in PluralKit
-(on behalf of your system) will be in the system time zone. To do so, use the `pk;system timezone` command, like so:
+### Régler le fuseau horaire du sytème
+PluralKit est par défault réglé sur le fuseau horaire [UTC](https://fr.wikipedia.org/wiki/Temps_universel_coordonn%C3%A9). 
+Si vous le souhaitez, vous pouvez régler un *fuseau horaire du système*, de façon à ce qu'à chaque date et heure affichées dans PluralKit
+(de la part de votre système) vous serez dans le fuseau horaire du système. Pour ce faire, utilisez la commande `pk;system timezone`, tel que :
 
-    pk;system timezone Europe/Copenhagen
-    pk;system timezone America/New_York
-    pk;system timezone DE
-    pk;system timezone 🇬🇧
+    pk;system timezone Europe/Paris
+    pk;system timezone America/Toronto
+    pk;system timezone FR
+    pk;system timezone 🇫🇷
     
-You can specify time zones in various ways. In regions with large amounts of time zones (eg. the Americas, Europe, etc),
-specifying an exact time zone code is the best way. To get your local time zone code, visit [this site](https://xske.github.io/tz).
-You can see the full list [here, on Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (see the column *TZ database name*).
-You can also search by country code, either by giving the two-character [*ISO-3166-1 alpha-2* country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) (eg. `GB` or `DE`), or just by a country flag emoji.
+Vous pouvez spécifier votre fuseau horaire de différentes façons. Dans les régions couvrant une grande quantité de fuseaux horaires  (ex. l'Europe, les Etats-Unis, etc.),
+spécifier un code exact de fuseau horaire est le plus simple. Pour avoir le code de votre localité, allez sur le site [ce site](https://xske.github.io/tz).
+Vous pouvez voir la liste complète [ici, sur Wikipedia (anglais uniquement)](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (colonne *TZ database name*).
+Vous pouvez aussi chercher par code pays, soit en « donnant » les deux caractères du [code pays *ISO-3166-1 alpha-2*](https://fr.wikipedia.org/wiki/ISO_3166#Liste_des_codes_pays_[1]) (ex. `GB` ou `DE`), ou simplement par un emoji drapeau.
 
-To clear a time zone, type `pk;system timezone` without any parameters. 
+Pour mettre à zéro un fuseau horaire, écrire `pk;system timezone` sans aucun paramètre. 
 
-### Deleting a system
-If you want to delete your own system, simply use the command:
+### Supprimer un système
+Si vous voulez supprimer votre propre système, utilisez simplement la commande :
 
     pk;system delete
+
+Vous devrez authentifier en tapant votre ID système quand le bot vous l’affichera – Pour éviter une suppression accidentelle.
+
+## Gérer les membres
+Afin d'utiliser la plupart des fonctionnalités liées à PluralKit, vous avez besoin de travailler avec des *membres de système*.
+
+La plupart des commandes des membres suit le format suivant `pk;member NomDuMembre commande Paramètres`. Notez que si un nom de membre est composé de plusieurs mots, vous aurez besoin de le mettre dans des "guillemets" à travers les commandes ci-dessous.
+
+### Créer un membre
+Vous ne pouvez pas faire plus avec PluralKit sans avoir enregistré plusieurs membres avec votre système, mais le faire est assez simple - utilisez juste la commande `pk;member new` suivie du nom du membre, tel que :
+
+    pk;member new Amanda
+    pk;member new Pierre Dupont
     
-You will need to verify by typing the system's ID when the bot prompts you to - to prevent accidental deletions.
+Seule exception, si le nom est composé de plusieurs mots vous *ne devrez pas* les enfermer dans des guillemets.
 
-## Member management
-
-In order to do most things related to PluralKit, you need to work with *system members*.
-
-Most member commands follow the format of `pk;member MemberName verb Parameter`. Note that if a member's name has multiple words, you'll need to enclose it in "double quotes" throughout the commands below.
-
-### Creating a member
-You can't do much with PluralKit without having registered members with your system, but doing so is quite simple - just use the `pk;member new` command followed by the member's name, like so:
-
-    pk;member new John
-    pk;member new Craig Smith
-    
-As the one exception to the rule above, if the name consists of multiple words you must *not* enclose it in double quotes.
-
-### Looking up member info
-To view information about a member, there are a couple ways to do it. Either you can address a member by their name (if they're in your own system), by their 5-character *member ID*, or by their *display name*, like so:
+### Voir les infos d'un membre
+Pour voir les info à propos d'un member, il y a plusieurs façons de faire. Soit vous vous référez à son nom (si le membre est dans votre propre système), par leur *ID membre* de 5 caractères, ou par leur *nom affiché*, comme suit :
 
     pk;member John
     pk;member qazws
-    pk;member J
+    pk;member "John Lenon"
 
-Member IDs are the only way to address a member in another system, and you can find it in various places - for example the system's member list, or on a message info card gotten by reacting to messages with a question mark.
+L'ID membre est le  seul moyen de faire référence à un membre d'un autre système et vous pouvez le trouver à plusieurs endroits – par exemple dans la liste des membres du systèm, ou via la carte d'info envoyé quand vous réagissez à un message avec un emoji point d'interrogation.
 
-### Listing system members
-To list all the members in a system, use the `pk;system list` command. This will show a paginated list of all member names in the system. You can either run it on your own system, or another - like so:
+### Lister les membres d'un système
+Pour lister tous les members d'un système, utiliser la commande `pk;system list`. Ça affichera une liste paginée avec tous les membres du système. Vous pouvez le faire avec votre propre système, ou avec un autre système, comme suit :
 
     pk;system list
     pk;system @Craig#5432 list
     pk;system qazws list
     
-If you want a more detailed list, with fields such as pronouns and description, add the word `full` to the end of the command, like so:
+Si vous voulez une liste plus détaillée, avec plus de champs comme pronoms, description, ajouter le mot `full` à la fin de la commande, comme suit :
 
     pk;system list full
     pk;system @Craig#5432 list full
     pk;system qazws list full
 
-### Member renaming
-If you want to change the name of a member, you can use the `pk;member rename` command, like so:
+### Renommer un membre
+si vous souhaitez renommer un membre, vous pouvez utiliser la commande `pk;member rename`, comme suit :
 
-    pk;member John rename Joanne
+    pk;member Jean rename Jenny
     pk;member "Craig Smith" rename "Craig Johnson"
     
-### Member display names
-Normally, when proxying a member, the name displayed in the proxied message will be the member's name. However, in some cases
-you may want to display a different name. For example, you may want to include a member's pronouns inside the proxied name,
-indicate a subsystem, include emojis or symbols that don't play nice with the command syntax, or just in general show a different name from the member's "canonical" name.
+### Modifier le nom affiché d'un membre
+Normallement, quand vous proxyez un membre, le nom affiché dans le message proxy est le nom du membre. Cependant, dans certains cas, vous souhaiterez afficher un nom différent. Par exemple, vous pouvez inclure les pronoms du membre dans les messages proxyés, indiquer le sous-système, inclure des emojis ou symbôles qui ne fonctionnement pas bien avec les syntaxe des commandes, ou juste en générale montrer un nom différent que le nom « canon » du membre.
 
-In such cases you can set the member's *display name*. Which will, well, display that name instead. You can set
-a display name using the `pk;member displayname` command, like so:
+Dans de tels cas, vous devez modifier le *nom affiché* du membre, qui affichera donc ce nom à la place du nom du membre, lors du proxy d'un message. Pour définir un nom affiché, utiliser la commande `pk;member displayname`, comme suit :
 
-    pk;member John displayname Jonathan
-    pk;member Robert displayname Bob (he/him)
-    
-To remove a display name, just use the same command with no last parameter, eg:
+    pk;member John displayname John Lenon (il/masc)
+    pk;member Myriam displayname Mimi (elle/fem)
+
+Pour supprimer un nom affiché, utiliser simplement la commande sans le dernier paramètre :
 
     pk;member John displayname
-    
-This will remove the display name, and thus the member will be proxied with their canonical name.
 
-### Member server display names
-If you'd like to set a display name (as above), but only for a specific server, you can set the member's *server display name*.
-This functions just like global display names, but only in the same server you set them in. For example:
+Ça supprimera le display name du membre et désormais les messages du membre seront proxyés avec le nom canonique.ç
 
-    pk;member John servername AdminJohn
-    
-The server name applies to the same server you run the command in, so naturally this command doesn't function in DMs (as you cannot proxy in DMs).
-    
-### Member description
-In the same way as a system can have a description, so can a member. You can set a description using the `pk;member description` command, like so:
+### Modifier le nom affiché d'un membre, sur un serveur spécifique
+Si vous voulez modifier le nom affiché (comme précédent), mais seuleument sur un serveur spécifique, vous pouvez définir le *nom affiché serveur* d'un membre.
+Cette fonction fonctionne comme le *nom affiché* globale, mais uniquement pour le serveur sur lequel vous l'avez définie. Par exemple :
 
-    pk;member John description John is a very cool person, and you should give him hugs.
-    
-As with system descriptions, the member description has a 1000 character length limit. 
-To clear a member description, use the command with no additional parameters (eg. `pk;member John description`).
+    pk;member John servername Admin John
 
-### Member color
-A system member can have an associated color value.
-This color is *not* displayed as a name color on proxied messages due to a Discord limitation,
-but it's shown in member cards, and it can be used in third-party apps, too.
-To set a member color, use the `pk;member color` command with [a hexadecimal color code](https://htmlcolorcodes.com/), like so:
+Le nom affiché s'applique au même serveur sur lequel vous avez lancé la commande, naturellement, cette commande ne fonctionne pas en DM (comme vous ne pouvez pas proxyer en DMs).
+
+### Description de membre
+De la même façon qu'un système peut avoir une description, un membre peut aussi en avoir une. Pour définir une description, utiliser la commande `pk;member description` command, comme suit :
+
+    pk;member John description John est une personne vraiment cool et vous pouvez lui faire des câlins.
+
+Comme pour la description d'un système, la description d'un membre a une limite de 1000 caractères.
+Pour supprimer la description d'un membre, utiliser cette commande, sans paramètre supplémentaire (ex : `pk;member John description`).
+
+### Couleur d'un membre
+Un membre système peut avoir une valeur de couleur associée.
+La couleur *ne* s'appliquera *pas* au nom lors du proxy, en raison d'une limitation Discord,
+Mais elle est affichée dans la carte membre et peut aussi être utilisée dans des applications tierces.
+Pour définir la couleur d'un membre, utiliser la commande `pk;member color` avec [un code couleur hexadécimal](https://htmlcolorcodes.com/), comme suit :
 
     pk;member John color #ff0000
     pk;member John color #87ceeb
-    
-To clear a member color, use the command with no color code argument (eg. `pk;member John color`).
 
-### Member avatar
-If you want your member to have an associated avatar to display on the member information card and on proxied messages, you can set the member avatar. To do so, use the `pk;member avatar` command. You can either supply it with an direct URL to an image, or attach an image directly. For example.
+Pour supprimer la couleur d'un membre, utiliser simplement la commande sans code couleur (ex : `pk;member John color`)
+
+### Avatar membre
+Si vous voulez que votre membre ait un avatar associé, affiché dans sa carte d'information et lors du proxy des messages, vous pouvez définir un avatar membre. Pour ce faire, utiliser la commande `pk;member avatar`. Vous pouvez soit donner l'URL direct vers l'image ou l'attacher au message contenant la commande. Par exemple :
 
     pk;member John avatar http://placebeard.it/512.jpg
     pk;member "Craig Johnson" avatar   (with an attached image)
-    
-To preview the current avatar (if one is set), use the command with no arguments:
+
+Pour voir l'avatar d'un membre (si un est défini), utiliser la commande sans argument :
 
     pk;member John avatar
     
-To clear your avatar, use the subcommand `avatar clear` (eg. `pk;member John avatar clear`).
+Pour supprimer l'avatar, utiliser simplement la sous-commande `avatar clear` (ex : `pk;member John avatar clear`).
 
 ### Member server avatar
 You can also set an avatar for a specific server. This will "override" the normal avatar, and will be used when proxying messages and looking up member cards in that server. To do so, use the `pk;member serveravatar` command, in the same way as the normal avatar command above:
